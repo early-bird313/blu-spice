@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="bn" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blu Spice | Tangail - ঐতিহ্যবাহী সেরা স্বাদে</title>
+  
+  <meta name="title" content="Blu Spice | Tangail - ঐতিহ্যবাহী সেরা স্বাদে">
+  <meta name="description" content="টাঙ্গাইলের সেরা ওভেন ফ্রেশ পিৎজা, ক্রিস্পি চিকেন ফ্রাই ও রিফ্রেশিং মকটেল। কলেজ পাড়া, টাঙ্গাইল সদর।">
+  <meta property="og:image" content="logo.png">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#0b1e3d',
+              navy: '#152e5b',
+              orange: '#ff5a1f',
+              cream: '#fffaf5',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Standard Google Fonts: Noto Sans Bengali & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#fffaf5] text-slate-900 font-['Noto_Sans_Bengali','Outfit',sans-serif] pb-24 lg:pb-0 text-[16px]">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-gradient-to-r from-[#0b1e3d] via-[#16366f] to-[#ff5a1f] text-white text-sm sm:text-base py-2.5 px-4 text-center font-semibold shadow-sm">
+    <span>🔥 <strong>টাঙ্গাইল স্পেশাল:</strong> ওয়েবসাইট থেকে যেকোনো পিৎজা অর্ডারে পাচ্ছেন দুটি স্পেশাল ডিপ সস একদম ফ্রি!</span>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-orange-100 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-22 flex items-center justify-between py-2">
+      
+      <!-- Brand Logo -->
+      <a href="javascript:void(0)" onclick="switchPage('home')" class="flex items-center gap-3.5 group">
+        <img src="logo.png" alt="Blu Spice Logo" class="h-16 w-16 object-contain rounded-full shadow-md group-hover:rotate-3 transition-transform" />
+        <div>
+          <span class="text-2xl sm:text-3xl font-black text-[#0b1e3d] flex items-center gap-1 font-['Outfit']">
+            Blu <span class="text-[#ff5a1f]">Spice</span>
+          </span>
+          <span class="block text-xs font-bold text-gray-500 uppercase tracking-wider -mt-1">
+            College Para, Tangail
+          </span>
+        </div>
+      </a>
+
+      <!-- 5-Page Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-8 text-[16px] font-bold text-gray-800">
+        <a href="javascript:void(0)" onclick="switchPage('home')" data-page="home" class="nav-link active">হোম</a>
+        <a href="javascript:void(0)" onclick="switchPage('menu')" data-page="menu" class="nav-link">খাবারের মেন্যু</a>
+        <a href="javascript:void(0)" onclick="switchPage('about')" data-page="about" class="nav-link">আমাদের গল্প</a>
+        <a href="javascript:void(0)" onclick="switchPage('reviews')" data-page="reviews" class="nav-link">কাস্টমার রিভিউ</a>
+        <a href="javascript:void(0)" onclick="switchPage('contact')" data-page="contact" class="nav-link">যোগাযোগ ও বুকিং</a>
+      </nav>
+
+      <!-- Right Action Area -->
+      <div class="flex items-center gap-3.5">
+        <!-- Cart Trigger -->
+        <button onclick="toggleCart(true)" class="relative p-3 rounded-full bg-orange-50 hover:bg-orange-100 text-[#ff5a1f] border border-orange-200 transition shadow-sm">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+          <span class="cart-badge hidden absolute -top-1 -right-1 bg-[#ff5a1f] text-white font-black text-xs w-5 h-5 rounded-full flex items-center justify-center shadow-md animate-pulse">0</span>
+        </button>
+
+        <!-- WhatsApp Order Button -->
+        <a href="https://api.whatsapp.com/send?phone=8801700000000&text=%E0%A6%86%E0%A6%B8%E0%A6%B8%E0%A6%BE%E0%A6%B2%E0%A6%BE%E0%A6%AE%E0%A7%81%20%E0%A6%86%E0%A6%B2%E0%A6%BE%E0%A6%87%E0%A6%95%E0%A7%81%E0%A6%AE%20Blu%20Spice%2C%20%E0%A6%86%E0%A6%AE%E0%A6%BF%20%E0%A6%96%E0%A6%BE%E0%A6%AC%E0%A6%BE%E0%A6%B0%20%E0%A6%85%E0%A6%B0%E0%A7%8D%E0%A6%A1%E0%A6%BE%E0%A6%B0%20%E0%A6%95%E0%A6%B0%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87%E0%A5%A4" target="_blank" class="btn-primary-orange hidden sm:flex items-center gap-2 px-6 py-3 text-sm font-bold shadow-md">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824z"/></svg>
+          <span>হোয়াটসঅ্যাপে অর্ডার</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==================== PAGE 1: HOME (হোম) ==================== -->
+  <main id="page-home" class="page-section active">
+    
+    <!-- Hero Section -->
+    <section class="relative pt-14 pb-20 overflow-hidden bg-gradient-to-b from-white via-orange-50/40 to-transparent">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Left Text Content -->
+          <div class="lg:col-span-7 space-y-7 text-center lg:text-left">
+            
+            <div class="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-blue-900/10 border border-blue-900/20 text-[#0b1e3d] text-sm font-bold uppercase tracking-wider">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#ff5a1f] animate-ping"></span>
+              টাঙ্গাইলের সেরা ফাস্টফুড ডেস্টিনেশন
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-[#0b1e3d] leading-tight">
+              খাঁটি ওভেনের সেরা স্বাদে <br>
+              <span class="text-[#ff5a1f]">Blu Spice | Tangail</span>
+            </h1>
+
+            <p class="text-lg sm:text-xl text-gray-700 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
+              টাঙ্গাইল কলেজ পাড়ায় পাচ্ছেন গরম গরম মেল্টেড চিজ পিৎজা, রসালো জিঙ্গার বার্গার, ক্রিস্পি চিকেন এবং সিগনেচার মকটেল। বন্ধুদের আড্ডা কিংবা পরিবারের খাবারের সেরা ঠিকানা।
+            </p>
+
+            <!-- Value Props Badges -->
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 text-sm font-bold text-gray-800">
+              <span class="bg-white px-4 py-2.5 rounded-2xl shadow-sm border border-orange-100 flex items-center gap-2">
+                🍕 ওভেন ফ্রেশ হট পিৎজা
+              </span>
+              <span class="bg-white px-4 py-2.5 rounded-2xl shadow-sm border border-orange-100 flex items-center gap-2">
+                🛵 টাঙ্গাইল সদরে দ্রুত ডেলিভারি
+              </span>
+              <span class="bg-white px-4 py-2.5 rounded-2xl shadow-sm border border-orange-100 flex items-center gap-2">
+                ⭐ ৪.৯ কাস্টমার রেটিং
+              </span>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-3">
+              <button onclick="switchPage('menu')" class="btn-primary-orange w-full sm:w-auto px-9 py-4 text-base font-extrabold flex items-center justify-center gap-2 shadow-xl">
+                <span>খাবারের সম্পূর্ণ মেন্যু দেখুন</span>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </button>
+
+              <button onclick="switchPage('contact')" class="btn-navy w-full sm:w-auto px-8 py-4 text-base font-bold flex items-center justify-center gap-2">
+                <span>টেবিল বুকিং করুন</span>
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Right Showcase Card (Using Real Baked Pizza Image) -->
+          <div class="lg:col-span-5 relative">
+            <div class="relative mx-auto max-w-md">
+              
+              <div class="bg-white p-4 rounded-3xl shadow-2xl border border-orange-100 animate-float relative z-10">
+                <div class="aspect-square rounded-2xl overflow-hidden relative group">
+                  <img src="pizza-baked.jpg" alt="Blu Spice Special Baked Pizza" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  
+                  <div class="absolute top-3 left-3 bg-[#ff5a1f] text-white text-xs font-black px-4 py-1.5 rounded-full shadow-lg">
+                    আজকের শেফ স্পেশাল 🔥
+                  </div>
+
+                  <!-- Price overlay -->
+                  <div class="absolute bottom-3 left-3 right-3 bg-white/95 backdrop-blur-md p-4 rounded-2xl border border-orange-100 flex items-center justify-between shadow-lg">
+                    <div>
+                      <h4 class="text-base font-extrabold text-gray-900">স্পেশাল চিকেন পিৎজা</h4>
+                      <p class="text-xs text-gray-500 font-medium">মেল্টেড চিজ ও দুটি ডিপ সস সহ</p>
+                    </div>
+                    <div class="text-right">
+                      <span class="text-xl font-black text-[#ff5a1f]">৳৪৮০/-</span>
+                      <button onclick="addItemToCart('p1')" class="block mt-1 text-xs font-bold bg-[#0b1e3d] hover:bg-[#ff5a1f] text-white px-3.5 py-1.5 rounded-xl transition">
+                        + অর্ডার করুন
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Decorative sticker badge -->
+              <div class="absolute -bottom-5 -left-5 bg-[#0b1e3d] text-white p-4 rounded-2xl shadow-xl flex items-center gap-3 z-20 hidden sm:flex border border-blue-800">
+                <span class="text-3xl">🌿</span>
+                <div>
+                  <p class="text-sm font-bold">১০০% ফ্রেশ উপাদান</p>
+                  <p class="text-xs text-gray-300">প্রতিদিন তাটকা প্রস্তুতি</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Ambiance Highlight Banner (Using Real Interior Image) -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-gradient-to-r from-[#0b1e3d] to-[#16366f] rounded-3xl overflow-hidden shadow-2xl text-white">
+          <div class="grid lg:grid-cols-12 items-center">
+            
+            <div class="lg:col-span-6 p-8 sm:p-14 space-y-6">
+              <span class="text-orange-400 text-sm font-bold uppercase tracking-widest">ক্যাফে ও ডাইন-ইন স্পেস</span>
+              <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight">
+                মনোরম পরিবেশে বন্ধুদের সাথে আড্ডা ও খাওয়া-দাওয়া
+              </h2>
+              <p class="text-base sm:text-lg text-gray-300 leading-relaxed font-normal">
+                টাঙ্গাইল কলেজ পাড়ায় আমাদের ক্যাফেতে রয়েছে এসি সুবিধাযুক্ত সিটিং, সুন্দর লাইটিং ও মার্জিত পরিবেশ। বন্ধু, পরিবার কিংবা প্রিয়জনের সাথে যেকোনো স্পেশাল মুহূর্ত উদযাপনের জন্য চলে আসুন আজই।
+              </p>
+              <div class="pt-2 flex flex-wrap gap-4">
+                <button onclick="switchPage('about')" class="btn-primary-orange px-7 py-3.5 text-sm font-bold">
+                  ক্যাফের ছবি ও গল্প দেখুন →
+                </button>
+                <button onclick="switchPage('contact')" class="bg-white/10 hover:bg-white/20 text-white px-7 py-3.5 rounded-full text-sm font-bold transition">
+                  টেবিল বুক করুন
+                </button>
+              </div>
+            </div>
+
+            <div class="lg:col-span-6 h-80 sm:h-[420px] relative">
+              <img src="interior-dine.jpg" alt="Blu Spice Dine-in Ambiance" class="w-full h-full object-cover" />
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Combos Highlight (User Image 2 Request: Animated & Bigger Text) -->
+    <section class="py-20 bg-orange-50/60 border-t border-orange-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Heading with comfortable top margin so it never cuts off -->
+        <div class="text-center max-w-2xl mx-auto mb-16 pt-4">
+          <span class="text-[#ff5a1f] text-sm font-bold uppercase tracking-widest bg-orange-100 px-4 py-1.5 rounded-full">
+            টাকার সেরা ব্যবহার
+          </span>
+          <h2 class="text-3xl sm:text-5xl font-black text-gray-900 mt-3">
+            স্পেশাল কম্বো অফার
+          </h2>
+          <p class="text-base sm:text-lg text-gray-600 mt-2 font-medium">
+            কম খরচে বন্ধুদের বা পরিবারের আড্ডায় সেরা কম্বো মিল
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          
+          <!-- Combo 1 (Animated) -->
+          <div class="combo-card">
+            <div>
+              <div class="flex justify-between items-center mb-4">
+                <span class="bg-blue-50 text-[#0b1e3d] text-sm font-bold px-3.5 py-1.5 rounded-full border border-blue-100">সোলো কম্বো</span>
+                <span class="text-3xl font-black text-gray-900 font-['Outfit']">৳২৯৯/-</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-black text-gray-900 mb-4">বার্গার ও ফ্রাইস কম্বো</h3>
+              <ul class="text-base text-gray-700 space-y-3 mb-8 font-medium">
+                <li class="flex items-center gap-2.5">
+                  <span class="text-emerald-500 font-bold">✓</span>
+                  <span>১টি ক্রিস্পি জিঙ্গার চিকেন বার্গার</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="text-emerald-500 font-bold">✓</span>
+                  <span>১ প্যাক পেরি-পেরি ফ্রেঞ্চ ফ্রাইস</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="text-emerald-500 font-bold">✓</span>
+                  <span>১ গ্লাস কোল্ড ড্রিংকস</span>
+                </li>
+              </ul>
+            </div>
+            <button onclick="addItemToCart('b1'); showToast('🍔 সোলো কম্বো কার্টে যোগ করা হয়েছে!');" class="btn-navy w-full py-3.5 text-sm font-extrabold flex items-center justify-center gap-2">
+              <span>অর্ডার করুন</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </button>
+          </div>
+
+          <!-- Combo 2 (Featured Animated with Floating Badge) -->
+          <div class="combo-card featured">
+            <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#ff5a1f] text-white text-xs font-black px-5 py-1.5 rounded-full shadow-lg tracking-wider">
+              সবচেয়ে জনপ্রিয় 🔥
+            </span>
+            <div class="mt-2">
+              <div class="flex justify-between items-center mb-4">
+                <span class="bg-orange-50 text-[#ff5a1f] text-sm font-bold px-3.5 py-1.5 rounded-full border border-orange-200">ফ্যামিলি ফিস্ট</span>
+                <span class="text-3xl font-black text-[#ff5a1f] font-['Outfit']">৳৭৯৯/-</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-black text-gray-900 mb-4">ব্লু স্পাইস হ্যাপি মিল</h3>
+              <ul class="text-base text-gray-700 space-y-3 mb-8 font-medium">
+                <li class="flex items-center gap-2.5">
+                  <span class="text-[#ff5a1f] font-bold">✓</span>
+                  <span>১টি সিগনেচার স্পেশাল চিকেন পিৎজা (১০")</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="text-[#ff5a1f] font-bold">✓</span>
+                  <span>৪ পিস ক্রিস্পি চিকেন ফ্রাই</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="text-[#ff5a1f] font-bold">✓</span>
+                  <span>২টি ব্লু স্পাইস ড্রিংকস ও ডিপ সস</span>
+                </li>
+              </ul>
+            </div>
+            <button onclick="addItemToCart('p1'); addItemToCart('c1'); showToast('🍕 ফ্যামিলি কম্বো কার্টে যোগ করা হয়েছে!');" class="btn-primary-orange w-full py-3.5 text-sm font-extrabold flex items-center justify-center gap-2 shadow-lg">
+              <span>অর্ডার করুন</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </button>
+          </div>
+
+          <!-- Combo 3 (Animated) -->
+          <div class="combo-card">
+            <div>
+              <div class="flex justify-between items-center mb-4">
+                <span class="bg-blue-50 text-[#0b1e3d] text-sm font-bold px-3.5 py-1.5 rounded-full border border-blue-100">টুইন পিৎজা</span>
+                <span class="text-3xl font-black text-gray-900 font-['Outfit']">৳৮৯৯/-</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-black text-gray-900 mb-4">ডাবল পিৎজা ম্যানিয়া</h3>
+              <ul class="text-base text-gray-700 space-y-3 mb-8 font-medium">
+                <li class="flex items-center gap-2.5">
+                  <span class="text-emerald-500 font-bold">✓</span>
+                  <span>১টি মেক্সিকান ফ্রেশ টপিংস পিৎজা (৮")</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="text-emerald-500 font-bold">✓</span>
+                  <span>১টি স্মোকি বিবিকিউ চিকেন পিৎজা (৮")</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="text-emerald-500 font-bold">✓</span>
+                  <span>১টি বড় স্পেশাল চিজ ডিপ সস ফ্রি</span>
+                </li>
+              </ul>
+            </div>
+            <button onclick="addItemToCart('p2'); addItemToCart('p3'); showToast('🍕 টুইন পিৎজা কার্টে যোগ করা হয়েছে!');" class="btn-navy w-full py-3.5 text-sm font-extrabold flex items-center justify-center gap-2">
+              <span>অর্ডার করুন</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== PAGE 2: MENU (খাবারের মেন্যু) ==================== -->
+  <main id="page-menu" class="page-section">
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="text-[#ff5a1f] text-sm font-bold uppercase tracking-widest bg-orange-100 px-4 py-1.5 rounded-full">
+            এক্সক্লুসিভ মেন্যু
+          </span>
+          <h2 class="text-3xl sm:text-5xl font-black text-[#0b1e3d] mt-3">আমাদের সম্পূর্ণ খাবারের তালিকা</h2>
+          <p class="text-base text-gray-600 mt-2 font-medium">আপনার পছন্দের খাবার সিলেক্ট করুন এবং সরাসরি এক ক্লিকে কার্টে যোগ করুন</p>
+        </div>
+
+        <!-- Search & Filter Controls -->
+        <div class="flex flex-col md:flex-row items-center justify-between gap-5 mb-10">
+          
+          <!-- Category Pills -->
+          <div class="flex items-center gap-2.5 overflow-x-auto pb-2 w-full md:w-auto scrollbar-none">
+            <button data-category="all" class="cat-pill active">🍽️ সব খাবার</button>
+            <button data-category="pizza" class="cat-pill">🍕 স্পেশাল পিৎজা</button>
+            <button data-category="burger" class="cat-pill">🍔 জুসি বার্গার</button>
+            <button data-category="chicken" class="cat-pill">🍗 ক্রিস্পি চিকেন</button>
+            <button data-category="pasta" class="cat-pill">🍝 বেকড পাস্তা</button>
+            <button data-category="drinks" class="cat-pill">🍹 মকটেল ও ড্রিংকস</button>
+          </div>
+
+          <!-- Live Search Bar -->
+          <div class="relative w-full md:w-80">
+            <input 
+              type="text" 
+              id="menuSearchInput" 
+              placeholder="খাবারের নাম লিখে খুঁজুন..." 
+              class="w-full pl-10 pr-4 py-3 rounded-full bg-white border border-orange-200 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#ff5a1f] shadow-sm font-medium"
+            />
+            <svg class="w-4 h-4 text-gray-400 absolute left-3.5 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          </div>
+
+        </div>
+
+        <!-- Menu Grid Injected by JS -->
+        <div id="menuGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7"></div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== PAGE 3: ABOUT US (আমাদের গল্প) ==================== -->
+  <main id="page-about" class="page-section">
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <span class="text-[#ff5a1f] text-sm font-bold uppercase tracking-widest bg-orange-100 px-4 py-1.5 rounded-full">
+            আমাদের গল্প
+          </span>
+          <h2 class="text-3xl sm:text-5xl font-black text-[#0b1e3d]">
+            "We like to give you the best quality"
+          </h2>
+          <p class="text-base sm:text-lg text-gray-700 leading-relaxed font-medium">
+            টাঙ্গাইলের ভোজনরসিক মানুষদের রুচিশীল ও স্বাস্থ্যসম্মত স্বাদের তৃপ্তি দিতেই <strong>Blu Spice</strong> এর আত্মপ্রকাশ। প্রতিটি পিৎজার ময়দার ডো থেকে শুরু করে ক্রাঞ্চি চিকেন—সবকিছু প্রস্তুত করা হয় নিজস্ব সিক্রেট স্পাইস ব্লেন্ড এবং শতভাগ পরিচ্ছন্নতার সাথে।
+          </p>
+        </div>
+
+        <!-- Real Photo Gallery -->
+        <div class="mb-16">
+          <div class="flex items-center justify-between mb-6">
+            <h3 class="text-2xl font-black text-[#0b1e3d]">রেস্টুরেন্ট ও কিচেন গ্যালারি</h3>
+            <span class="text-sm font-bold text-gray-500">Blu Spice | Tangail Real Photos</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- Photo 1: Signature Pizza with dips -->
+            <div class="gallery-item group aspect-video">
+              <img src="pizza-baked.jpg" alt="Signature Baked Pizza" class="w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-5 text-white">
+                <div>
+                  <h4 class="font-bold text-base">ওভেন ফ্রেশ সিগনেচার পিৎজা</h4>
+                  <p class="text-sm text-gray-200">প্রিমিয়াম মোজারেলা চিজ ও ডিপ সস সহ</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Photo 2: Kitchen Pizza Prep with bell peppers -->
+            <div class="gallery-item group aspect-video">
+              <img src="pizza-prep.jpg" alt="Kitchen Fresh Pizza Prep" class="w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-5 text-white">
+                <div>
+                  <h4 class="font-bold text-base">তাজা উপাদানের স্বাস্থ্যসম্মত প্রস্তুতি</h4>
+                  <p class="text-sm text-gray-200">প্রতিটি অর্ডারে ফ্রেশ ভেজিটেবল ও চিকেন</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Photo 3: Cafe Dine-in Interior -->
+            <div class="gallery-item group aspect-video">
+              <img src="interior-dine.jpg" alt="Dine-in Ambiance" class="w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-5 text-white">
+                <div>
+                  <h4 class="font-bold text-base">মনোরম ডাইন-ইন ক্যাফে</h4>
+                  <p class="text-sm text-gray-200">শান্ত ও আরামদায়ক সিটিং পরিবেশ</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Photo 4: Cafe Counter & Mocktail Bar -->
+            <div class="gallery-item group aspect-video">
+              <img src="cafe-counter.png" alt="Beverage & Mocktail Counter" class="w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-5 text-white">
+                <div>
+                  <h4 class="font-bold text-base">মকটেল ও বেভারেজ কাউন্টার</h4>
+                  <p class="text-sm text-gray-200">রিফ্রেশিং ড্রিংকস ও কোল্ড কফি কর্নার</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Photo 5: Welcome Entrance with Balloons -->
+            <div class="gallery-item group aspect-video sm:col-span-2 lg:col-span-2">
+              <img src="entrance-balloons.jpg" alt="Grand Entrance" class="w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-5 text-white">
+                <div>
+                  <h4 class="font-bold text-base">ওয়েলকামিং এন্ট্রান্স</h4>
+                  <p class="text-sm text-gray-200">কলেজ পাড়া, টাঙ্গাইল সদর</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 4 Core Pillars -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-white p-6 rounded-3xl border border-orange-100 shadow-sm text-center">
+            <span class="text-4xl block mb-2">🌿</span>
+            <h4 class="font-black text-gray-900 text-base">১০০% ফ্রেশ উপাদান</h4>
+            <p class="text-sm text-gray-600 mt-1">কোনো ফ্রোজেন বা ক্ষতিকর প্রিজারভেটিভ ব্যবহার করা হয় না।</p>
+          </div>
+          <div class="bg-white p-6 rounded-3xl border border-orange-100 shadow-sm text-center">
+            <span class="text-4xl block mb-2">🧼</span>
+            <h4 class="font-black text-gray-900 text-base">ওপেন হাইজিন কিচেন</h4>
+            <p class="text-sm text-gray-600 mt-1">পরিচ্ছন্ন ও স্বাস্থ্যসম্মত পরিবেশে খাবার প্রস্তুত হয়।</p>
+          </div>
+          <div class="bg-white p-6 rounded-3xl border border-orange-100 shadow-sm text-center">
+            <span class="text-4xl block mb-2">❄️</span>
+            <h4 class="font-black text-gray-900 text-base">মনোরম এসি পরিবেশ</h4>
+            <p class="text-sm text-gray-600 mt-1">ফ্রি ওয়াইফাই ও মনোরম ব্যাকগ্রাউন্ড মিউজিক।</p>
+          </div>
+          <div class="bg-white p-6 rounded-3xl border border-orange-100 shadow-sm text-center">
+            <span class="text-4xl block mb-2">🛵</span>
+            <h4 class="font-black text-gray-900 text-base">ফাস্ট হোম ডেলিভারি</h4>
+            <p class="text-sm text-gray-600 mt-1">টাঙ্গাইল সদরের যেকোনো ঠিকানায় খাবার পৌঁছাবে গরম গরম।</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== PAGE 4: REVIEWS (কাস্টমার রিভিউ) ==================== -->
+  <main id="page-reviews" class="page-section">
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <span class="text-[#ff5a1f] text-sm font-bold uppercase tracking-widest bg-orange-100 px-4 py-1.5 rounded-full">
+            কাস্টমার মতামত
+          </span>
+          <h2 class="text-3xl sm:text-5xl font-black text-[#0b1e3d] mt-3">টাঙ্গাইলের ফুডিজরা কী বলছেন?</h2>
+          <p class="text-base text-gray-600 mt-2 font-medium">আমাদের সম্মানিত গ্রাহকদের আসল রিভিউ ও রেটিং</p>
+        </div>
+
+        <!-- Rating Summary Bar -->
+        <div class="bg-white p-6 sm:p-8 rounded-3xl border border-orange-100 shadow-sm mb-12 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="flex items-center gap-5 text-center md:text-left">
+            <div class="text-5xl font-black text-[#ff5a1f] font-['Outfit']">4.9</div>
+            <div>
+              <div class="text-orange-400 text-xl">★★★★★</div>
+              <p class="text-sm text-gray-600 font-bold">৫০০+ গ্রাহক রেটিং ভিত্তিক</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-3.5 text-sm font-bold text-gray-800">
+            <span class="bg-orange-50 text-[#ff5a1f] px-4 py-2 rounded-full border border-orange-200">🍕 খাবারের স্বাদ: ৫.০</span>
+            <span class="bg-blue-50 text-[#0b1e3d] px-4 py-2 rounded-full border border-blue-100">✨ পরিবেশ: ৪.৯</span>
+            <span class="bg-emerald-50 text-emerald-700 px-4 py-2 rounded-full border border-emerald-100">🛵 ডেলিভারি স্পিড: ৪.৮</span>
+          </div>
+        </div>
+
+        <!-- Reviews Grid -->
+        <div id="reviewsGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16"></div>
+
+        <!-- Leave a Review Form Card -->
+        <div class="max-w-2xl mx-auto bg-white p-8 sm:p-10 rounded-3xl border border-orange-100 shadow-md">
+          <div class="text-center mb-6">
+            <h3 class="text-2xl font-black text-[#0b1e3d]">আপনার মূল্যবান অভিজ্ঞতা জানান</h3>
+            <p class="text-sm text-gray-600 mt-1 font-medium">Blu Spice-এ আপনার খাওয়ার অনুভূতি কেমন ছিল?</p>
+          </div>
+
+          <form id="reviewForm" onsubmit="handleReviewSubmit(event)" class="space-y-4">
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-bold text-gray-800 mb-1">আপনার নাম *</label>
+                <input type="text" id="revName" required placeholder="যেমন: তানভীর আহমেদ" class="w-full px-4 py-3 text-sm rounded-xl border border-gray-200 focus:outline-none focus:border-[#ff5a1f] font-medium">
+              </div>
+              <div>
+                <label class="block text-sm font-bold text-gray-800 mb-1">এলাকা / ঠিকানা</label>
+                <input type="text" id="revLocation" placeholder="যেমন: কলেজ পাড়া, টাঙ্গাইল" class="w-full px-4 py-3 text-sm rounded-xl border border-gray-200 focus:outline-none focus:border-[#ff5a1f] font-medium">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-bold text-gray-800 mb-1">রেটিং সিলেক্ট করুন</label>
+              <select id="revRating" class="w-full px-4 py-3 text-sm rounded-xl border border-gray-200 focus:outline-none focus:border-[#ff5a1f] bg-white font-bold text-orange-500">
+                <option value="5">★★★★★ (৫ স্টার - অসাধারণ স্বাদ ও পরিবেশ)</option>
+                <option value="4">★★★★☆ (৪ স্টার - খুব ভালো লেগেছে)</option>
+                <option value="3">★★★☆☆ (৩ স্টার - ভালো লেগেছে)</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-sm font-bold text-gray-800 mb-1">আপনার রিভিউ মেসেজ *</label>
+              <textarea id="revComment" rows="3" required placeholder="খাবারের স্বাদ, মান বা সার্ভিস কেমন লেগেছে লিখুন..." class="w-full px-4 py-3 text-sm rounded-xl border border-gray-200 focus:outline-none focus:border-[#ff5a1f] font-medium"></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary-orange w-full py-3.5 text-sm font-bold shadow-md">
+              রিভিউ প্রকাশ করুন
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== PAGE 5: CONTACT & BOOKING (যোগাযোগ ও টেবিল বুকিং) ==================== -->
+  <main id="page-contact" class="page-section">
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="text-[#ff5a1f] text-sm font-bold uppercase tracking-widest bg-orange-100 px-4 py-1.5 rounded-full">
+            টেবিল বুকিং ও যোগাযোগ
+          </span>
+          <h2 class="text-3xl sm:text-5xl font-black text-[#0b1e3d] mt-3">আমাদের রেস্টুরেন্টে চলে আসুন</h2>
+          <p class="text-base text-gray-600 mt-2 font-medium">আগে থেকেই টেবিল বুক করুন কিংবা সরাসরি ভিজিট করুন</p>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-8 items-start mb-12">
+          
+          <!-- Table Reservation Form -->
+          <div class="lg:col-span-7 bg-white p-8 sm:p-10 rounded-3xl border border-orange-100 shadow-md">
+            <h3 class="text-2xl font-black text-[#0b1e3d] mb-2 flex items-center gap-2">
+              <span>🍽️</span> টেবিল রিজার্ভেশন ফর্ম
+            </h3>
+            <p class="text-sm text-gray-600 mb-6 font-medium">জন্মদিন, ফ্যামিলি গেট-টুগেদার বা আড্ডার জন্য টেবিল বুক করুন</p>
+
+            <form onsubmit="handleTableBooking(event)" class="space-y-4">
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-bold text-gray-800 mb-1">আপনার নাম *</label>
+                  <input type="text" id="bookName" required placeholder="আপনার নাম" class="w-full px-4 py-3 text-sm rounded-xl border border-gray-200 focus:outline-none focus:border-[#ff5a1f]">
+                </div>
+                <div>
+                  <label class="block text-sm font-bold text-gray-800 mb-1">মোবাইল নম্বর *</label>
+                  <input type="tel" id="bookPhone" required placeholder="০১৭০০-০০০০০০" class="w-full px-4 py-3 text-sm rounded-xl border border-gray-200 focus:outline-none focus:border-[#ff5a1f]">
+                </div>
+              </div>
+
+              <div class="grid sm:grid-cols-3 gap-4">
+                <div>
+                  <label class="block text-sm font-bold text-gray-800 mb-1">তারিখ *</label>
+                  <input type="date" id="bookDate" required class="w-full px-4 py-3 text-sm rounded-xl border border-gray-200 focus:outline-none focus:border-[#ff5a1f]">
+                </div>
+                <div>
+                  <label class="block text-sm font-bold text-gray-800 mb-1">সময় *</label>
+                  <input type="time" id="bookTime" required class="w-full px-4 py-3 text-sm rounded-xl border border-gray-200 focus:outline-none focus:border-[#ff5a1f]">
+                </div>
+                <div>
+                  <label class="block text-sm font-bold text-gray-800 mb-1">অতিথি সংখ্যা</label>
+                  <select id="bookGuests" class="w-full px-4 py-3 text-sm rounded-xl border border-gray-200 focus:outline-none focus:border-[#ff5a1f] bg-white font-semibold">
+                    <option value="২ জন">২ জন</option>
+                    <option value="৩-৪ জন" selected>৩-৪ জন</option>
+                    <option value="৫-৬ জন">৫-৬ জন</option>
+                    <option value="৭+ জন (গ্রুপ)">৭+ জন (গ্রুপ)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-bold text-gray-800 mb-1">উপলক্ষ (অপশনাল)</label>
+                <select id="bookOccasion" class="w-full px-4 py-3 text-sm rounded-xl border border-gray-200 focus:outline-none focus:border-[#ff5a1f] bg-white font-semibold">
+                  <option value="বন্ধুদের আড্ডা">বন্ধুদের আড্ডা</option>
+                  <option value="বার্থডে সেলিব্রেশন">বার্থডে সেলিব্রেশন</option>
+                  <option value="ফ্যামিলি ডিনার">ফ্যামিলি ডিনার</option>
+                  <option value="সাধারণ ভিজিট">সাধারণ ভিজিট</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn-primary-orange w-full py-4 text-sm font-extrabold flex items-center justify-center gap-2 shadow-lg">
+                <span>হোয়াটসঅ্যাপে টেবিল বুকিং নিশ্চিত করুন</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </button>
+            </form>
+          </div>
+
+          <!-- Contact Details & Hours -->
+          <div class="lg:col-span-5 space-y-6">
+            <div class="bg-white p-7 rounded-3xl border border-orange-100 shadow-sm space-y-5">
+              <h4 class="font-black text-gray-900 text-lg">সরাসরি যোগাযোগ</h4>
+              
+              <div class="flex items-start gap-3.5 text-sm">
+                <span class="text-xl">📍</span>
+                <div>
+                  <strong class="text-gray-900 block font-bold text-base">ঠিকানা:</strong>
+                  <span class="text-gray-600 leading-relaxed font-medium">কলেজ পাড়া, টাঙ্গাইল সদর, ঢাকা ডিভিশন, বাংলাদেশ।</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3.5 text-sm">
+                <span class="text-xl">⏰</span>
+                <div>
+                  <strong class="text-gray-900 block font-bold text-base">খোলা থাকার সময়:</strong>
+                  <span class="text-gray-600 font-medium">প্রতিদিন সকাল ১১:০০ টা থেকে রাত ১০:৩০ টা পর্যন্ত।</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3.5 text-sm">
+                <span class="text-xl">📞</span>
+                <div>
+                  <strong class="text-gray-900 block font-bold text-base">হটলাইন নম্বর:</strong>
+                  <span class="text-gray-600 font-medium">০১৭০০-০০০০০০ (অর্ডার ও পার্সেল)</span>
+                </div>
+              </div>
+
+              <div class="pt-2 flex gap-3">
+                <a href="tel:+8801700000000" class="btn-navy flex-1 py-3 text-sm text-center font-bold">কল করুন</a>
+                <a href="https://api.whatsapp.com/send?phone=8801700000000" target="_blank" class="btn-primary-orange flex-1 py-3 text-sm text-center font-bold">হোয়াটসঅ্যাপ</a>
+              </div>
+            </div>
+
+            <!-- FB Page Box -->
+            <div class="bg-[#0b1e3d] text-white p-6 rounded-3xl flex items-center justify-between shadow-md">
+              <div class="flex items-center gap-3.5">
+                <img src="logo.png" alt="Logo" class="w-12 h-12 rounded-full" />
+                <div>
+                  <h5 class="text-sm font-bold">Blu Spice Facebook</h5>
+                  <p class="text-xs text-gray-300">অফিশিয়াল পেজ ফলো করুন</p>
+                </div>
+              </div>
+              <a href="https://www.facebook.com/profile.php?id=61567415518138" target="_blank" class="px-5 py-2.5 rounded-full bg-[#ff5a1f] text-white text-xs font-bold">
+                ভিজিট করুন
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Google Map Frame -->
+        <div class="rounded-3xl overflow-hidden shadow-lg border border-orange-100 h-80">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14545.97561918386!2d89.9142!3d24.2513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fdfb4f3b145b0b%3A0x28974eb8f7142718!2sCollege%20Para%2C%20Tangail!5e0!3m2!1sen!2sbd!4v1690000000000!5m2!1sen!2sbd" 
+            class="w-full h-full border-0" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER (User Image 1 Request: Bigger & Clearer) ==================== -->
+  <footer class="bg-[#0b1e3d] text-white pt-20 pb-12 border-t border-blue-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-14">
+        
+        <!-- Brand Info -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-3.5">
+            <img src="logo.png" alt="Blu Spice Logo" class="h-16 w-16 rounded-full" />
+            <span class="text-2xl font-black font-['Outfit']">Blu <span class="text-[#ff5a1f]">Spice</span></span>
+          </div>
+          <p class="text-sm sm:text-base text-gray-200 leading-relaxed font-normal">
+            টাঙ্গাইলের শীর্ষস্থানীয় ফাস্টফুড ও পিৎজা কর্নার। খাঁটি মসলা, প্রিমিয়াম মোজারেলা চিজ ও স্বাস্থ্যসম্মত খাবার।
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <a href="https://www.facebook.com/profile.php?id=61567415518138" target="_blank" class="w-10 h-10 rounded-full bg-blue-800/90 flex items-center justify-center hover:bg-[#ff5a1f] transition text-sm font-bold shadow">f</a>
+            <a href="tel:+8801700000000" class="w-10 h-10 rounded-full bg-blue-800/90 flex items-center justify-center hover:bg-[#ff5a1f] transition text-sm font-bold shadow">📞</a>
+            <a href="https://api.whatsapp.com/send?phone=8801700000000" target="_blank" class="w-10 h-10 rounded-full bg-blue-800/90 flex items-center justify-center hover:bg-[#ff5a1f] transition text-sm font-bold shadow">💬</a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h5 class="text-lg font-bold text-orange-400 mb-5 uppercase tracking-wider">পেজসমূহ</h5>
+          <ul class="space-y-3 text-sm sm:text-base text-gray-200 font-medium">
+            <li><a href="javascript:void(0)" onclick="switchPage('home')" class="hover:text-orange-400 transition">হোম</a></li>
+            <li><a href="javascript:void(0)" onclick="switchPage('menu')" class="hover:text-orange-400 transition">খাবারের মেন্যু</a></li>
+            <li><a href="javascript:void(0)" onclick="switchPage('about')" class="hover:text-orange-400 transition">আমাদের গল্প</a></li>
+            <li><a href="javascript:void(0)" onclick="switchPage('reviews')" class="hover:text-orange-400 transition">কাস্টমার রিভিউ</a></li>
+            <li><a href="javascript:void(0)" onclick="switchPage('contact')" class="hover:text-orange-400 transition">যোগাযোগ ও টেবিল বুকিং</a></li>
+          </ul>
+        </div>
+
+        <!-- Popular Menu Items -->
+        <div>
+          <h5 class="text-lg font-bold text-orange-400 mb-5 uppercase tracking-wider">জনপ্রিয় আইটেম</h5>
+          <ul class="space-y-3 text-sm sm:text-base text-gray-200 font-medium">
+            <li><a href="javascript:void(0)" onclick="switchPage('menu')" class="hover:text-orange-400 transition">স্পেশাল চিকেন পিৎজা</a></li>
+            <li><a href="javascript:void(0)" onclick="switchPage('menu')" class="hover:text-orange-400 transition">মেক্সিকান স্পাইসি পিৎজা</a></li>
+            <li><a href="javascript:void(0)" onclick="switchPage('menu')" class="hover:text-orange-400 transition">ক্রিস্পি জিঙ্গার বার্গার</a></li>
+            <li><a href="javascript:void(0)" onclick="switchPage('menu')" class="hover:text-orange-400 transition">গোল্ডেন ফ্রাইড চিকেন</a></li>
+            <li><a href="javascript:void(0)" onclick="switchPage('menu')" class="hover:text-orange-400 transition">ব্লু ওশান সিগনেচার মকটেল</a></li>
+          </ul>
+        </div>
+
+        <!-- Location Info -->
+        <div>
+          <h5 class="text-lg font-bold text-orange-400 mb-5 uppercase tracking-wider">লোকেশন</h5>
+          <p class="text-sm sm:text-base text-gray-200 leading-relaxed mb-3 font-medium">
+            কলেজ পাড়া, টাঙ্গাইল সদর, বাংলাদেশ।
+          </p>
+          <p class="text-sm sm:text-base text-gray-200 font-medium">
+            ⏰ খোলা: প্রতিদিন সকাল ১১:০০ - রাত ১০:৩০
+          </p>
+        </div>
+
+      </div>
+
+      <div class="pt-8 border-t border-blue-900 text-center text-sm text-gray-300">
+        <p>Copyright © 2026 <strong>Blu Spice | Tangail</strong> • Developed with ❤️ for Foodies</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Floating Hotline Button -->
+  <a href="tel:+8801700000000" class="floating-hotline hidden sm:flex">
+    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.3-.5-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z"/></svg>
+    <span>হটলাইন: ০১৭০০-০০০০০০</span>
+  </a>
+
+  <!-- Mobile Bottom Navigation (Native App Feel) -->
+  <nav class="mobile-nav-bar lg:hidden">
+    <button onclick="switchPage('home')" data-page="home" class="mobile-nav-item active">
+      <span class="text-lg">🏠</span>
+      <span>হোম</span>
+    </button>
+    <button onclick="switchPage('menu')" data-page="menu" class="mobile-nav-item">
+      <span class="text-lg">🍕</span>
+      <span>মেন্যু</span>
+    </button>
+    <button onclick="switchPage('about')" data-page="about" class="mobile-nav-item">
+      <span class="text-lg">📖</span>
+      <span>গল্প</span>
+    </button>
+    <button onclick="switchPage('reviews')" data-page="reviews" class="mobile-nav-item">
+      <span class="text-lg">⭐</span>
+      <span>রিভিউ</span>
+    </button>
+    <button onclick="switchPage('contact')" data-page="contact" class="mobile-nav-item">
+      <span class="text-lg">📍</span>
+      <span>বুকিং</span>
+    </button>
+  </nav>
+
+  <!-- Slide-in WhatsApp Cart Drawer -->
+  <div id="cartOverlay" onclick="toggleCart(false)" class="hidden opacity-0 fixed inset-0 bg-black/60 backdrop-blur-sm z-50 transition-opacity"></div>
+  <div id="cartDrawer" class="fixed top-0 right-0 h-full w-full sm:w-[440px] bg-white z-50 flex flex-col translate-x-full transition-transform duration-300 shadow-2xl">
+    
+    <div class="p-5 border-b flex items-center justify-between bg-[#0b1e3d] text-white">
+      <h3 class="font-bold text-base sm:text-lg flex items-center gap-2">
+        <span>🛒</span> আপনার ফুড কার্ট
+      </h3>
+      <button onclick="toggleCart(false)" class="text-gray-300 hover:text-white p-1 text-xl font-bold">✕</button>
+    </div>
+
+    <div id="cartItemsContainer" class="flex-grow overflow-y-auto p-4 space-y-3"></div>
+
+    <div class="p-5 border-t bg-orange-50/40 space-y-3.5">
+      <div class="space-y-1.5 text-sm font-medium">
+        <div class="flex justify-between text-gray-600">
+          <span>সাবটোটাল:</span>
+          <span id="cartSubtotal" class="font-bold text-gray-900">৳0/-</span>
+        </div>
+        <div class="flex justify-between text-gray-600">
+          <span>ডেলিভারি চার্জ (টাঙ্গাইল সদর):</span>
+          <span class="font-bold text-gray-900">৳40/-</span>
+        </div>
+        <div class="flex justify-between text-base font-black text-[#ff5a1f] pt-2 border-t border-orange-100">
+          <span>সর্বমোট প্রদেয়:</span>
+          <span id="cartGrandTotal">৳0/-</span>
+        </div>
+      </div>
+
+      <div class="space-y-2.5">
+        <input type="text" id="custName" placeholder="আপনার নাম *" class="w-full px-4 py-2.5 text-sm border border-orange-200 rounded-xl focus:outline-none focus:border-[#ff5a1f] bg-white">
+        <input type="tel" id="custPhone" placeholder="মোবাইল নম্বর *" class="w-full px-4 py-2.5 text-sm border border-orange-200 rounded-xl focus:outline-none focus:border-[#ff5a1f] bg-white">
+        <input type="text" id="custAddress" placeholder="ডেলিভারি ঠিকানা (যেমন: কলেজ পাড়া/সদর) *" class="w-full px-4 py-2.5 text-sm border border-orange-200 rounded-xl focus:outline-none focus:border-[#ff5a1f] bg-white">
+      </div>
+
+      <button onclick="sendWhatsAppOrder()" class="btn-primary-orange w-full py-3.5 text-sm font-extrabold flex items-center justify-center gap-2 shadow-lg">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824z"/></svg>
+        <span>হোয়াটসঅ্যাপে অর্ডার কনফার্ম করুন</span>
+      </button>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
